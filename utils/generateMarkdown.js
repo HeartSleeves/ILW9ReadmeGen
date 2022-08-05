@@ -101,10 +101,55 @@ function renderLicense(license) {
 
 //generate markdown for README
 async function generateMarkdown(data) {
+  let install;
+  let screenshot;
+  let deployment;
+  let repository;
+  let features;
+  let contribute;
+  let tests;
+
+  if (data.qinstall === true) {
+    install = `${data.install}`;
+  } else {
+    install = `Installation is not required`;
+  }
+
+  if (data.qscreenshot === true) {
+    screenshot = "## Screenshot \n![Screenshot](" + data.screenshot + ")";
+  } else {
+    screenshot = ``;
+  }
+  if (data.qdeployment === true) {
+    deployment = data.deployment;
+  } else {
+    deployment = `This project is not deployed`;
+  }
+  if (data.qrepository === true) {
+    repository = data.repository;
+  } else {
+    repository = `This project has no repository`;
+  }
+  if (data.features !== "") {
+    features = "## Features \n" + data.features;
+  } else {
+    features = ``;
+  }
+  if (data.contribute !== "") {
+    contribute = "## How to Contribute \n" + data.contribute;
+  } else {
+    contribute = ``;
+  }
+  if (data.tests !== "") {
+    tests = "## Tests \n" + data.tests;
+  } else {
+    tests = ``;
+  }
   return `# ${data.title}
 ## Description
 ${data.description}
-${data.screenshot}
+${screenshot}
+    
 
 ## Table of Contents
 - [Installation](#installation)
@@ -114,30 +159,24 @@ ${data.screenshot}
 - [License](#license)
 
 ## Installation
-${data.install}
+${install}
 
 ## Usage
 ${data.usage}
 
 ## Links
-Deployment: ${data.deployment}
-Repository: ${data.repository}
+- Deployment: ${deployment} 
+- Repository: ${repository}
 
 ## Credits
-${data.credits}
-Github: https://github.com/${data.github}
+- Creator: ${data.credits} 
+- Github: https://github.com/${data.github}
 
 ## License
 ${renderLicense(data.license)}
-
-## Features
-${data.features}
-
-## How to Contribute
-${data.contribute}
-
-## Tests
-${data.tests}
+${features}
+${contribute}
+${tests}
 
 ## Questions?
 Email me at: ${data.email}

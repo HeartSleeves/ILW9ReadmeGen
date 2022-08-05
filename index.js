@@ -363,8 +363,10 @@ function writeToFile(fileName, data) {
 
 //initialize app
 function init() {
-  inquirer.prompt(questions).then((answers) => console.log(answers));
-  // .then((readme) => writeToFile("README.md", readme));
+  inquirer
+    .prompt(questions)
+    .then((answers) => generateMarkdown(answers))
+    .then((readme) => writeToFile("README.md", readme));
 }
 
 //initialize app
