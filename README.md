@@ -7,7 +7,7 @@ Generates professional Readme.md files from user answered prompts
 ## Screenshot
 
 ![Screenshot](./assets/screenshot/screenshot.png)
-[Video](./assets/video/demonstration.webm)
+[Video](https://drive.google.com/file/d/17iP3Y9t4BDca2VMxdrBJhD864zM1AlMd/view?usp=sharing)
 
 ## Table of Contents
 
