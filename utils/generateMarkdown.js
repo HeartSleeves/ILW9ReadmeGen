@@ -95,7 +95,7 @@ function renderLicense(license) {
   } else if (license === "Zlib") {
     return "[![License: Zlib](https://img.shields.io/badge/License-Zlib-lightgrey.svg)](https://opensource.org/licenses/Zlib)";
   } else if (license === "None") {
-    return "";
+    return "None";
   }
 }
 

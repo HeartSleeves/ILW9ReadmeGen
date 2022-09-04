@@ -366,7 +366,7 @@ function init() {
   inquirer
     .prompt(questions)
     .then((answers) => generateMarkdown(answers))
-    .then((readme) => writeToFile("YOURNEWREADME.md", readme));
+    .then((readme) => writeToFile("README.md", readme));
 }
 
 //initialize app
